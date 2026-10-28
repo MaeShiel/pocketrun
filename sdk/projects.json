@@ -1,0 +1,143 @@
+{
+  "projects": {
+    "~/Documents/new routebook/navroute": {
+      "name": "navroute",
+      "plugins": {
+        "android_file_picker": {
+          "version": "2.1.1"
+        },
+        "flutter_plugin_android_lifecycle": {
+          "version": "2.0.35"
+        },
+        "geocoding_android": {
+          "version": "5.0.2"
+        },
+        "geolocator_android": {
+          "version": "5.2.1"
+        },
+        "image_picker_android": {
+          "version": "0.8.13+17"
+        },
+        "jni": {
+          "version": "1.1.0"
+        },
+        "jni_flutter": {
+          "version": "1.0.4+1"
+        },
+        "package_info_plus": {
+          "version": "10.2.2"
+        },
+        "path_provider_android": {
+          "version": "2.3.1"
+        },
+        "permission_handler_android": {
+          "version": "13.0.1"
+        },
+        "share_plus": {
+          "version": "13.3.1"
+        },
+        "shared_preferences_android": {
+          "version": "2.4.23"
+        },
+        "sqflite_android": {
+          "version": "2.4.2+3"
+        },
+        "url_launcher_android": {
+          "version": "6.3.30"
+        }
+      }
+    },
+    "sdk/starter": {
+      "name": "pocketrun_starter",
+      "plugins": {
+        "android_file_picker": {
+          "version": "2.1.1"
+        },
+        "audio_session": {
+          "version": "0.2.4"
+        },
+        "audioplayers_android": {
+          "version": "5.2.1"
+        },
+        "camera_android_camerax": {
+          "version": "0.7.2"
+        },
+        "connectivity_plus": {
+          "version": "7.3.1"
+        },
+        "device_info_plus": {
+          "version": "13.3.0"
+        },
+        "flutter_local_notifications": {
+          "version": "22.3.3"
+        },
+        "flutter_plugin_android_lifecycle": {
+          "version": "2.0.35"
+        },
+        "flutter_secure_storage": {
+          "version": "11.2.0"
+        },
+        "flutter_tts": {
+          "version": "4.2.5"
+        },
+        "geocoding_android": {
+          "version": "5.0.2"
+        },
+        "geolocator_android": {
+          "version": "5.2.1"
+        },
+        "image_picker_android": {
+          "version": "0.8.13+17"
+        },
+        "jni": {
+          "version": "1.1.0"
+        },
+        "jni_flutter": {
+          "version": "1.0.4+1"
+        },
+        "just_audio": {
+          "version": "0.10.6"
+        },
+        "mobile_scanner": {
+          "version": "7.4.2"
+        },
+        "package_info_plus": {
+          "version": "10.2.2"
+        },
+        "path_provider_android": {
+          "version": "2.3.1"
+        },
+        "permission_handler_android": {
+          "version": "13.0.1"
+        },
+        "sensors_plus": {
+          "version": "7.1.1"
+        },
+        "share_plus": {
+          "version": "13.3.1"
+        },
+        "shared_preferences_android": {
+          "version": "2.4.23"
+        },
+        "speech_to_text": {
+          "version": "7.4.0"
+        },
+        "sqflite_android": {
+          "version": "2.4.2+3"
+        },
+        "url_launcher_android": {
+          "version": "6.3.30"
+        },
+        "video_player_android": {
+          "version": "2.9.5"
+        },
+        "wakelock_plus": {
+          "version": "1.7.0"
+        },
+        "webview_flutter_android": {
+          "version": "4.12.0"
+        }
+      }
+    }
+  }
+}

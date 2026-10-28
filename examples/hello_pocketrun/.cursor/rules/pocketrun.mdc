@@ -1,0 +1,6 @@
+---
+description: PocketRun compatibility rules
+alwaysApply: true
+---
+
+Follow AGENTS.md in the project root: only the plugins and versions listed there, added with `pocketrun add`; no native Android code or new MethodChannels.

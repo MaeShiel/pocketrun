@@ -1,0 +1,20 @@
+# Compiled CLI (build it with: cd cli && dart compile exe bin/pocketrun.dart -o ../bin/pocketrun.exe)
+/bin/
+
+# Dart/Flutter build state (the Flutter projects also have their own .gitignore)
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android local state
+local.properties
+.gradle/
+*.jks
+*.keystore
+key.properties
+
+# Editors
+.idea/
+*.iml
+.vscode/
