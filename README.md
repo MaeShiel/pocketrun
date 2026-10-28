@@ -93,3 +93,7 @@ the same as `flutter run`. Found one in NavRoute itself: the odometer dialog in
 
 Data NavRoute saves inside PocketRun lives in PocketRun's storage, separate from the installed
 NavRoute app. Files it writes to shared folders (Documents/NavRoute) are real files on the device.
+
+## License
+
+MIT - see [LICENSE](LICENSE).
