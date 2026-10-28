@@ -13,7 +13,8 @@ already contains, so follow these rules.
 3. **Pure-Dart packages are fine** (state management, http, json, intl, maps drawn in Dart, ...).
 4. **No new native code**: do not edit `android/app/src/main/kotlin` or `MainActivity`, and do not add
    `MethodChannel`s of your own. Android permissions go in `android/app/src/main/AndroidManifest.xml`.
-5. Release APKs come from `flutter build apk --release` (Phase 5: `pocketrun build apk`).
+5. Release APKs: `pocketrun build apk` (signs, builds, installs). Never commit `android/key.properties`
+   or keystores.
 
 ## Plugins inside PocketRun (build 4)
 

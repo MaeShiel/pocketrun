@@ -4,6 +4,7 @@ import 'package:pocketrun_cli/create.dart';
 import 'package:pocketrun_cli/devices.dart';
 import 'package:pocketrun_cli/doctor.dart';
 import 'package:pocketrun_cli/env.dart';
+import 'package:pocketrun_cli/release.dart';
 import 'package:pocketrun_cli/sdk.dart';
 import 'package:pocketrun_cli/start.dart';
 
@@ -22,6 +23,10 @@ In a project folder
   pocketrun add <package>           Add a package at the version PocketRun has
   pocketrun rules                   (Re)write AGENTS.md for Cursor / Claude
   pocketrun sdk sync [--force]      Add this project's plugins/permissions to PocketRun, rebuild, install
+  pocketrun build apk               Signed release APK, installed on the phone (no PocketRun needed)
+      --app-id com.you.app            set the app id once (required while it is com.example...)
+      --bump                          raise the build number first (needed to update an installed app)
+      --qr                            offer it as a Wi-Fi download behind a QR code instead of adb
 
 PocketRun itself
   pocketrun new <name> [--org id]   New Flutter project ready for PocketRun
@@ -49,6 +54,9 @@ Future<void> main(List<String> args) async {
 
   final flag = rest.remove('--force');
   final noInstall = rest.remove('--no-install');
+  final bump = rest.remove('--bump');
+  final qr = rest.remove('--qr');
+  final appId = option('--app-id');
   final here = Directory.current.path;
 
   switch (rest) {
@@ -77,6 +85,8 @@ Future<void> main(List<String> args) async {
       await sync(here, force: flag, install: !noInstall, device: device);
     case ['sdk', 'add', ...final pkgs]:
       await sdkAdd(pkgs, install: !noInstall, device: device);
+    case ['build', 'apk']:
+      await buildApk(appId: appId, bump: bump, install: !noInstall, qr: qr, device: device);
     case ['sdk', 'build']:
       await build(install: !noInstall, device: device);
     default:

@@ -28,6 +28,31 @@ New projects: `pocketrun new my_app --org com.yourname`, then `pocketrun add cam
 version inside PocketRun). Each new project gets `AGENTS.md` (+ `CLAUDE.md`, `.cursor/rules/`) telling
 Cursor or Claude which plugins exist; `pocketrun rules` rewrites it after the SDK changes.
 
+## Installing a finished app (release APK)
+
+When a project is ready, build a real app that runs without the PC or PocketRun:
+
+```sh
+cd my_app
+pocketrun build apk --app-id com.yourname.myapp   # first time: sets the app id for good
+pocketrun build apk --bump                         # later releases: raise the build number, update the phone
+pocketrun build apk --qr                           # no adb: download it over Wi-Fi by scanning a QR code
+```
+
+- **Signing:** the first build of an app id creates its release key in `~/.pocketrun/keys`
+  (`<app id>.jks` + `<app id>.properties`), outside the project so it never gets committed. The project
+  gets a git-ignored `android/key.properties` and Flutter's standard signing block in
+  `android/app/build.gradle.kts`. **Back up `~/.pocketrun/keys`**: without the key, an installed app can
+  never be updated. Projects that already sign with their own `key.properties` (like NavRoute) keep it.
+- **Install:** with a phone connected over adb the APK is installed and opened. Without one (or with
+  `--qr`) the PC serves it on the home network behind a random URL and prints a QR code; the phone's
+  browser downloads it (allow "Install unknown apps" once). Windows may ask to allow PocketRun on
+  private networks.
+- **Output:** `build/pocketrun/<name>-<version>.apk`.
+- **Android developer verification:** installs over adb are not affected. Since 2026-09-30, opening an
+  unregistered APK file is restricted on certified phones in Brazil, Indonesia, Singapore and Thailand;
+  Google plans that worldwide in 2027 (free "limited distribution" accounts allow up to 20 devices).
+
 ## How it works
 
 PocketRun is a debug build, so its Dart VM accepts new code. `pocketrun start` runs
@@ -67,7 +92,7 @@ flutter_secure_storage, mobile_scanner, wakelock_plus, flutter_tts, speech_to_te
 | Project | Status |
 |---|---|
 | NavRoute 1.4.0+10 | Every feature passes (Phase 2, emulator); `doctor` all green on build 4 |
-| hello_pocketrun | Camera preview and text-to-speech work on first `start` |
+| hello_pocketrun | Camera preview and text-to-speech work on first `start`; release APK `dev.pocketrun.hello` installs, runs and updates (`--bump`) on the emulator |
 
 ### NavRoute checklist (Phase 2, Pixel 9 Pro XL emulator, 2026-10-27)
 
